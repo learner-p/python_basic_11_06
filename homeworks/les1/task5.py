@@ -3,6 +3,7 @@ while True:
     b=input('Издержки: ')
     if a.isdigit() and  b.isdigit():
         break
+    print('Некорректный ввод')
 a=int(a)
 b=int(b)
 if a>b:
