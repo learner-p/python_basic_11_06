@@ -10,7 +10,6 @@ while True:
     else:
         print('Некорректный ввод')
 
-print(new)
 my_list.append(new)
 my_list.sort(reverse=True)
 print(my_list)
