@@ -4,3 +4,18 @@
 Если специальный символ введен после нескольких чисел, то вначале нужно добавить сумму этих чисел к полученной ранее сумме и
 после этого завершить программу.'''
 
+def my_func(user_list,signal):
+    summary=sum(user_list)
+    print('Сумма равна:',summary)
+    return [summary],signal
+user_input=[]
+signal=''
+while True:
+    if signal=='стоп':
+        break
+    else:
+        input_list=input('Ввод чисел через пробел, "стоп" для остановки\n').split()
+        if 'стоп' in input_list:
+            signal='стоп'
+            input_list.remove('стоп')
+        user_input,signal=my_func(user_input+[int(i) for i in input_list],signal)
