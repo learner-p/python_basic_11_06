@@ -7,3 +7,6 @@ Four — 4
 При этом английские числительные должны заменяться на русские.
 Новый блок строк должен записываться в новый текстовый файл.'''
 
+with open('filo.txt','r') as file,open('filo2.txt','w') as file2:
+    for line in file.readlines():
+        file2.write(line.replace('One','Один').replace('Two','Два').replace('Three','Три').replace('Four','Четыре'))
