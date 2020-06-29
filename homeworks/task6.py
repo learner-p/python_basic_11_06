@@ -9,3 +9,18 @@
 Пример словаря:
 {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}'''
 
+result={}
+with open('file_task6','r') as file:
+    text=file.readlines()
+    for i in text:
+        middle=''
+        title=i.split(':')[0]
+        n=0
+        for y in i:
+            n+=1
+            if y.isdigit():
+                middle+=y
+                if not i[n].isdigit():
+                    middle+=' '
+        result.update([(title,sum([int(x) for x in middle.split()]))])
+print(result)
