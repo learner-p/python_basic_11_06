@@ -5,8 +5,22 @@
 создав экземпляр и вызвав описанный метод.
 Задачу можно усложнить, реализовав проверку порядка режимов, и при его нарушении выводить соответствующее сообщение и завершать скрипт.'''
 
+import time
 class TrafficLight:
-    def __init__(self):
-        __color=self.color
-    def running(self):
-        pass
+        __color='red'
+        def running(self):
+            assert TrafficLight.__color=='red', 'Неправильный цвет'
+            print(TrafficLight.__color)
+            time.sleep(7)
+            TrafficLight.__color='yellow'
+            assert TrafficLight.__color=='yellow', 'Неправильный цвет'
+            print(TrafficLight.__color)
+            time.sleep(2)
+            TrafficLight.__color='green'
+            assert TrafficLight.__color=='green', 'Неправильный цвет'
+            print(TrafficLight.__color)
+            time.sleep(5)
+            TrafficLight.__color='red'
+s = TrafficLight()
+while True:
+    s.running()
