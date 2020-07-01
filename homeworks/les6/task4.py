@@ -22,14 +22,12 @@ class Car:
 
 class TownCar(Car):
     def show_speed(self):
-        if self.speed>60:
-            print(f'Превышение скорости на {self.speed-60}')
+        print(f'Превышение скорости на {self.speed-60}') if self.speed>60 else None
 class SportCar(Car):
     pass
 class WorkCar(Car):
     def show_speed(self):
-        if self.speed>40:
-            print(f'Превышение скорости на {self.speed-40}')
+        print(f'Превышение скорости на {self.speed-40}') if self.speed>40 else None
 class PoliceCar(Car):
     pass
 
@@ -48,3 +46,7 @@ print()
 p=PoliceCar(70,'white','skoda',True)
 print(p.is_police)
 p.turn('направо')
+print()
+w=WorkCar(48,'green','largus')
+print(w.name.title())
+w.show_speed()
