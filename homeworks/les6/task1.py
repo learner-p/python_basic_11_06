@@ -7,20 +7,20 @@
 
 import time
 class TrafficLight:
-        __color='red'
+        __color='Красный'
         def running(self):
-            assert TrafficLight.__color=='red', 'Неправильный цвет'
+            assert TrafficLight.__color=='Красный', 'Неправильный цвет, должен быть красный'
             print(TrafficLight.__color)
             time.sleep(7)
-            TrafficLight.__color='yellow'
-            assert TrafficLight.__color=='yellow', 'Неправильный цвет'
+            TrafficLight.__color='Желтый'
+            assert TrafficLight.__color=='Желтый', 'Неправильный цвет, должен быть желтый'
             print(TrafficLight.__color)
             time.sleep(2)
-            TrafficLight.__color='green'
-            assert TrafficLight.__color=='green', 'Неправильный цвет'
+            TrafficLight.__color='Зеленый'
+            assert TrafficLight.__color=='Зеленый', 'Неправильный цвет, должен быть зеленый'
             print(TrafficLight.__color)
             time.sleep(5)
-            TrafficLight.__color='red'
+            TrafficLight.__color='Красный'
 s = TrafficLight()
 while True:
     s.running()
