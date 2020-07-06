@@ -25,7 +25,6 @@ class Clothes:
     @calc.setter
     def calc(self,size):
         if size>190:
-            print(f'Увеличенный расход ткани на объект {self.name}')
             self.H=1.2*self.H
     def __add__(self, other):
         return self.calc+other.calc
