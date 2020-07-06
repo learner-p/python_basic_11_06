@@ -9,17 +9,33 @@
 class Clothes:
     def __init__(self,name,size):
         self.name=name
+        self.size=size
         if self.name=='coat':
             self.V=size
         elif self.name=='suit':
             self.H=size
+        else:
+            print(f'Некорректный тип одежды объекта {self.name}')
+    @property
     def calc(self):
-        return (self.V/6.5 + 0.5) if self.name=='coat' else (self.H*2 + 0.3)
+        if self.name=='coat' or self.name=='suit':
+            return (f'Расход ткани на объект {self.name}, {self.size} составляет {(self.V/6.5 + 0.5) if self.name=="coat" else (self.H*2 + 0.3)}')
+        else:
+            return f'Ошибка расчета для объекта {self.name}'
+    @calc.setter
+    def calc(self,size):
+        if size>190:
+            print(f'Увеличенный расход ткани на объект {self.name}')
+            self.H=1.2*self.H
     def __add__(self, other):
-        return self.calc()+other.calc()
+        return self.calc+other.calc
 
 a=Clothes('coat',46)
 b=Clothes('suit',175)
-c=Clothes('jacket',48)
-print(a.calc(),b.calc())
-print(a+b)
+c=Clothes('suit',191)
+d=Clothes('jacket',48)
+print(a.calc)
+print(b.calc)
+print(c.calc)
+if d:
+    print(d.calc)
