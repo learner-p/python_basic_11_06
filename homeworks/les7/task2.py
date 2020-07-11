@@ -7,6 +7,7 @@
 для основных классов проекта, проверить на практике работу декоратора @property.'''
 
 class Clothes:
+    bad_list=[]
     def __init__(self,name,size):
         self.name=name
         self.size=size
@@ -16,6 +17,7 @@ class Clothes:
             self.H=size
         else:
             print(f'Некорректный тип одежды объекта {self.name}')
+            Clothes.bad_list.append(self)
     @property
     def calc(self):
         if self.name=='coat' or self.name=='suit':
@@ -38,3 +40,8 @@ print(b.calc)
 print(c.calc)
 if d:
     print(d.calc)
+print(Clothes.bad_list)
+print(d)
+del d
+print(Clothes.bad_list)
+print(d)
